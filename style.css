@@ -1,0 +1,671 @@
+body {
+  font-family: "Montserrat","Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+  font-size: 15px;
+  letter-spacing: .05em;
+  color: #333;
+}
+
+a {
+  transition: opacity .3s;
+  text-decoration: none;
+  color: #1ca9e3;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+  border-style: none;
+}
+
+
+
+.pc-only {
+  display: block;
+}
+
+.sp-only {
+  display: none;
+}
+
+/*--------------------------------
+ レイアウト
+---------------------------------*/
+.wrapper {
+  padding-top: 73px;
+}
+
+.section {
+  padding: 90px 0;
+}
+
+.section:nth-of-type(odd) {
+  background-color: #f7f7f7;
+}
+
+.container {
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/*--------------------------------
+ 見出し
+---------------------------------*/
+.title {
+  font-size: 34px;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 40px;
+  text-align: center;
+  letter-spacing: .05em;
+  color: #333;
+}
+
+.lead {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+/*--------------------------------
+ヘッダー
+---------------------------------*/
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 5px 10px -6px rgba(0,0,0,.1);
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+
+.header-logo {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-right: 20px;
+  letter-spacing: .05em;
+}
+
+.header-logo a {
+  color: #333;
+}
+
+.gnav-list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.gnav-item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.gnav-item a {
+  position: relative;
+  font-size: 13px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 0;
+  transition: .3s;
+  letter-spacing: .05em;
+  color: #333;
+}
+.gnav-item a:after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  content: "";
+  transition: .3s;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #333;
+}
+
+.gnav-item a:hover:after {
+  width: 100%;
+}
+
+/*--------------------------------
+ メインビジュアル
+---------------------------------*/
+.mv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* ビューポート全体の高さを使用 */
+  text-align: center;
+  background-image: url('../img/IMG_6640.jpg');
+  background-size: cover; /* 画像を全画面に広げる */
+  background-position: center; /* 画像を中央に配置 */
+  background-repeat: no-repeat; /* 画像の繰り返しを防ぐ */
+}
+
+.mv-container {
+  display: flex; /* フレックスボックスにする */
+  flex-direction: column; /* 縦に並べる */
+  justify-content: center; /* 垂直方向に中央配置 */
+  align-items: center; /* 水平方向に中央配置 */
+  padding: 0 40px;
+}
+
+.mv-title {
+  font-size: 60px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 5px;
+  letter-spacing: .1em;
+}
+
+.mv-subtitle {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 40px;
+  letter-spacing: .08em;
+}
+
+
+/*--------------------------------
+ My Profile
+---------------------------------*/
+.profile-content {
+  display: flex;
+  align-items: flex-start; /* 上揃えにする */
+  gap: 40px; /* 画像とテキストの間隔を調整 */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.profile-image {
+  flex-shrink: 0; /* 画像のサイズが変わらないように */
+}
+
+.profile-image img {
+  width: 400px; /* 画像の幅を調整 */
+  height: auto; /* 高さは自動で調整 */
+  object-fit: contain; /* 元のアスペクト比を維持したまま画像を表示 */
+  border: 1px solid #e6e6e6; /* 画像に枠線を追加 */
+}
+
+.profile-text {
+  max-width: 700px;
+  line-height: 1.6; /* テキスト行間の調整 */
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column; /* 要素を縦並びに変更 */
+  align-items: center; /* 中央揃え */
+}
+
+.name-age-container {
+  display: flex;
+  align-items: center; /* 名前と生年月日を横並びに */
+  gap: 20px; /* 名前と生年月日間のスペース */
+}
+
+.profile-age {
+  font-size: 14px;
+  color: #777;
+}
+
+.profile-divider {
+  width: 80%; /* 横線の幅 */
+  margin-top: 10px;
+  margin-bottom: 20px; /* 下線と自己紹介文の間隔を広げる */
+  border: 0; /* デフォルトの線を消す */
+  border-top: 2px solid #333; /* 線の色と太さを指定 */
+}
+
+.profile-name {
+  font-size: 24px;
+  font-weight: bold;
+  
+}
+
+.profile-description {
+  margin-top: 20px; /* 必要に応じて自己紹介文の上に余白を追加 */
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px; /* 説明文とリストの間隔 */
+}
+
+.profile-details {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.profile-details li {
+  font-size: 14px;
+  margin-bottom: 8px; /* 各リスト項目の間隔 */
+}
+
+.profile-details li strong {
+  color: #333;
+}
+
+
+
+/*--------------------------------
+ Skill
+---------------------------------*/
+.title {
+  margin-bottom: 50px; /* 余白の大きさを調整 */
+}
+
+
+.skill-list {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: -30px;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 48%;
+  margin-bottom: 60px;
+
+}
+
+
+
+.skill-img img {
+  transform: scale(1.5); /* 必要に応じて倍率を調整 */
+  position: relative;
+  z-index: 1; 
+  
+}
+
+
+.skill-body {
+  flex: 1;
+}
+
+.skill-name {
+  margin-top: 8px; /* 適切な余白に調整 */
+  text-align: center;
+  
+  font-size: 11px;
+  padding-top: 20px; /* 必要に応じて調整 */
+}
+
+/* 既存の .skill-text スタイル */
+.skill-text {
+  font-size: 14px;
+  line-height: 1.8;
+  text-align: center; /* テキストを中央揃え */
+}
+
+/* 最初の .skill-text のみにマージンを追加 */
+.top-skill-text {
+  display: block; /* 必要に応じて追加 */
+  margin-top: 20px; /* お好みの値に調整 */
+}
+
+
+
+/*--------------------------------
+ About
+---------------------------------*/
+.profile {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.profile-img {
+  width: 20%;
+  margin-right: 30px;
+  border-radius: 50%;
+}
+.profile-img img {
+  border-radius: 50%;
+}
+.profile-body {
+  flex: 1;
+}
+
+.profile-body p {
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.profile-body p:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+/*--------------------------------
+ Contact
+---------------------------------*/
+.contact {
+  text-align: center;
+  background-image: url('../img/IMG_6640.jpg');
+  background-size: cover; /* 画像を全画面に広げる */
+  background-position: center; /* 画像を中央に配置 */
+  background-repeat: no-repeat; /* 画像の繰り返しを防ぐ */
+}
+
+.contact-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.contact-text {
+  margin-top: 10px;
+}
+/*--------------------------------
+ ページトップ
+---------------------------------*/
+.page-top {
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  background-color: #4c4c4c;
+}
+
+.page-top .material-icons-outlined {
+  vertical-align: bottom;
+  color: #fff;
+}
+
+/*--------------------------------
+ フッター
+---------------------------------*/
+.footer {
+  padding: 30px;
+  background-color: #333;
+}
+
+.copyright {
+  font-size: 10px;
+  text-align: center;
+  color: #797979;
+}
+
+/*--------------------------------
+ 下層：My Profileページ
+---------------------------------*/
+.article {
+  padding: 80px 0;
+}
+
+.article-container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.article-title {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.article-body {
+  max-width: 720px;
+  margin: 0 auto;
+  margin-bottom: 80px;
+}
+
+.article-body h3 {
+  position: relative;
+  font-size: 18px;
+  margin-bottom: 5px;
+  padding-left: 1em;
+}
+
+.article-body h3:not(:first-child) {
+  margin-top: 50px;
+}
+
+.article-body h3::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  content: "";
+  border-radius: 3px;
+  background-color: #333;
+}
+
+.article-body p {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.home-link {
+  text-align: center;
+}
+
+/*media Queries 767
+----------------------------------------------------*/
+@media screen and (max-width: 767px) {
+  body {
+    font-size: 14px;
+  }
+
+  .pc-only {
+    display: none;
+  }
+
+  .sp-only {
+    display: block;
+  }
+
+  /* 見出し */
+  .title {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  .lead {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  /* レイアウト */
+  .wrapper {
+    padding-top: 57px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  /* ヘッダー */
+  .header .container {
+    padding: 15px;
+  }
+
+  .header-logo {
+    font-size: 15px;
+    margin-right: 15px;
+  }
+
+  .gnav-item:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  .gnav-item a {
+    font-size: 10px;
+  }
+
+  .gnav-item a:after {
+    display: none;
+  }
+
+  /*  メインビジュアル */
+  .mv {
+    height: 75vh;
+  }
+
+  .mv-container {
+    padding: 0 20px;
+  }
+
+  .mv-title {
+    font-size: 30px;
+  }
+  .mv-subtitle {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .mv-text {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* My Profile */
+.Profile {
+  padding: 60px 0;
+}
+
+.title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Profile Content */
+.profile-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* 上揃えにする */
+  gap: 20px; /* 画像とテキストの間隔を調整 */
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.profile-image {
+  flex-shrink: 0; /* 画像のサイズが変わらないように */
+}
+
+.profile-image img {
+  width: 80px; /* 画像の幅を指定 */
+  height: 80px; /* 画像の高さを指定 */
+  object-fit: cover; /* 画像のアスペクト比を保ったまま、枠内に収める */
+}
+
+.profile-text {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Profile Details */
+.profile-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.profile-description {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.profile-details {
+  list-style: none;
+  padding: 0;
+  margin-top: 50px;
+}
+
+.profile-details li {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+
+  /* Skill */
+  .skill-list {
+    display: block;
+    margin-bottom: 0;
+  }
+
+  .skill-item {
+    width: 100%;
+    margin-bottom: 35px;
+  }
+
+  .skill-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .skill-name {
+    margin-bottom: 5px;
+  }
+
+  .skill-text {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  /* About */
+  .profile {
+    display: block;
+  }
+  .profile-img {
+    width: 150px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+  }
+
+  .profile-body p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .profile-body p:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  /* フッター */
+  .footer {
+    padding: 20px;
+  }
+
+  /* 下層ページ */
+  .article {
+    padding: 50px 0;
+  }
+
+  .article-body h3 {
+    font-size: 16px;
+    padding-left: .8em;
+  }
+
+  .article-body h3:not(:first-child) {
+    margin-top: 30px;
+  }
+
+  .article-body p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+}
